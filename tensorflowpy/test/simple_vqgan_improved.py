@@ -183,6 +183,43 @@ data_variance = np.var(x_train / 255.0)
 
 
 ####################################################################################
+### Training 
+####################################################################################
+
+
+# checkpoint_path = "training/cp-{epoch:04d}.ckpt"
+# checkpoint_dir = os.path.dirname(checkpoint_path)
+
+# # Callback that saves the model's weights every 5 epochs
+# cp_callback = tf.keras.callbacks.ModelCheckpoint(
+#     filepath=checkpoint_path, 
+#     verbose=1, 
+#     save_weights_only=True,
+#     save_freq=5*469
+# )
+
+# # Create a new model instance
+# vqvae_trainer = VQVAETrainer(data_variance, latent_dim=16, num_embeddings=128)
+# vqvae_trainer.compile(optimizer=keras.optimizers.Adam())
+
+# # Save the weights using the `checkpoint_path` format
+# vqvae_trainer.save_weights(checkpoint_path.format(epoch=0))
+
+# # Train the model with the callback
+# vqvae_trainer.fit(
+#     x_train_scaled, 
+#     epochs=30, 
+#     batch_size=128,
+#     callbacks=[cp_callback],
+# )
+
+
+####################################################################################
+### Training finished
+####################################################################################
+
+
+####################################################################################
 ### Loading pretrained data 
 ####################################################################################
 
